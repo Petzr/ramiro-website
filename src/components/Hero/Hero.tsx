@@ -6,6 +6,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero__inner">
+        
         <div className="hero__content">
           <span className="hero__badge">Theatermaker &amp; Performer</span>
           <h1 className="hero__name">Ramiro</h1>
