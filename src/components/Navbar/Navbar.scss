@@ -12,7 +12,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: tokens.$color-rose;
+    color: tokens.$color-white;
     text-decoration: none;
   }
 
@@ -25,11 +25,8 @@
   }
 
   &__link {
-    color: tokens.$color-background;
+    color: tokens.$color-white;
     text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     transition: color 0.2s ease;
 
     &:hover {
