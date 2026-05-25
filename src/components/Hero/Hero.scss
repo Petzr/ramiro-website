@@ -1,0 +1,154 @@
+@use '../../index' as tokens;
+
+$photo-border-radius: 20px;
+$badge-height: 36px;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 600px;
+  padding: 4rem 3rem;
+  background-color: tokens.$color-background;
+  overflow: hidden;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 480px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  height: $badge-height;
+  padding: 0 1.25rem;
+  background-color: tokens.$color-rose;
+  color: tokens.$color-white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.hero__name {
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: tokens.$color-dark;
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: tokens.$color-rose;
+}
+
+.hero__bio {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: tokens.$color-dark;
+  max-width: 380px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 1.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &--filled {
+    background-color: tokens.$color-rose;
+    color: tokens.$color-white;
+    border: none;
+  }
+
+  &--outlined {
+    background-color: transparent;
+    color: tokens.$color-dark;
+    border: 2px solid tokens.$color-dark;
+  }
+}
+
+.hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 520px;
+}
+
+.hero__photo {
+  position: relative;
+  z-index: 2;
+  width: 320px;
+  height: 460px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: $photo-border-radius;
+}
+
+.hero__circle {
+  position: absolute;
+  border-radius: 50%;
+
+  &--large {
+    width: 380px;
+    height: 380px;
+    background-color: rgba(153, 136, 187, 0.25);
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    z-index: 1;
+  }
+
+  &--small-top {
+    width: 80px;
+    height: 80px;
+    background-color: tokens.$color-rose;
+    top: 4%;
+    right: 0;
+    z-index: 3;
+  }
+
+  &--small-bottom {
+    width: 70px;
+    height: 70px;
+    background-color: tokens.$color-rose;
+    bottom: 6%;
+    left: 48%;
+    z-index: 3;
+  }
+}
+
+.hero__square {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: tokens.$color-lavender;
+  bottom: 10%;
+  right: 0;
+  z-index: 3;
+}

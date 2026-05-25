@@ -1,8 +1,8 @@
+import Hero from '../components/Hero/Hero';
 
 function Home() {
   return (
-    
-      <p>Hello World</p>
+    <Hero />
   );
 }
 
