@@ -2,23 +2,56 @@
 
 $photo-border-radius: 20px;
 $badge-height: 36px;
+$hero-max-width: 900px;
+$breakpoint-mobile: 768px;
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  min-height: 600px;
-  padding: 4rem 3rem;
   background-color: tokens.$color-background;
+  padding: 4rem 2rem;
   overflow: hidden;
 }
 
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "content visual"
+    "actions visual";
+  align-items: start;
+  max-width: $hero-max-width;
+  margin: 0 auto;
+  min-height: 520px;
+}
+
 .hero__content {
+  grid-area: content;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  max-width: 480px;
+  padding-right: 2rem;
+  padding-top: 1rem;
 }
+
+.hero__actions {
+  grid-area: actions;
+  display: flex;
+  gap: 1rem;
+  padding-right: 2rem;
+  align-self: end;
+  padding-bottom: 1rem;
+}
+
+.hero__visual {
+  grid-area: visual;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 520px;
+}
+
+// --- Text elements ---
 
 .hero__badge {
   display: inline-flex;
@@ -37,7 +70,7 @@ $badge-height: 36px;
 
 .hero__name {
   margin: 0;
-  font-size: clamp(4rem, 8vw, 6.5rem);
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
   font-weight: 900;
   line-height: 1;
   color: tokens.$color-dark;
@@ -54,14 +87,9 @@ $badge-height: 36px;
   font-size: 0.95rem;
   line-height: 1.6;
   color: tokens.$color-dark;
-  max-width: 380px;
 }
 
-.hero__actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
+// --- Buttons ---
 
 .hero__button {
   display: inline-flex;
@@ -74,6 +102,7 @@ $badge-height: 36px;
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  white-space: nowrap;
 
   &:hover {
     opacity: 0.85;
@@ -92,19 +121,13 @@ $badge-height: 36px;
   }
 }
 
-.hero__visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 520px;
-}
+// --- Photo & decorative shapes ---
 
 .hero__photo {
   position: relative;
   z-index: 2;
-  width: 320px;
-  height: 460px;
+  width: 280px;
+  height: 420px;
   object-fit: cover;
   object-position: top center;
   border-radius: $photo-border-radius;
@@ -115,18 +138,18 @@ $badge-height: 36px;
   border-radius: 50%;
 
   &--large {
-    width: 380px;
-    height: 380px;
+    width: 340px;
+    height: 340px;
     background-color: rgba(153, 136, 187, 0.25);
     top: 50%;
     left: 50%;
-    transform: translate(-60%, -50%);
+    transform: translate(-100%, -90%);
     z-index: 1;
   }
 
   &--small-top {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background-color: tokens.$color-rose;
     top: 4%;
     right: 0;
@@ -134,8 +157,8 @@ $badge-height: 36px;
   }
 
   &--small-bottom {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-color: tokens.$color-rose;
     bottom: 6%;
     left: 48%;
@@ -145,10 +168,60 @@ $badge-height: 36px;
 
 .hero__square {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background-color: tokens.$color-lavender;
   bottom: 10%;
   right: 0;
   z-index: 3;
+}
+
+// --- Mobile layout ---
+
+@media (max-width: $breakpoint-mobile) {
+  .hero {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "content"
+      "visual"
+      "actions";
+    min-height: unset;
+  }
+
+  .hero__content {
+    padding-right: 0;
+    padding-top: 0;
+    gap: 1rem;
+  }
+
+  .hero__actions {
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero__visual {
+    height: 380px;
+    margin-top: 2rem;
+  }
+
+  .hero__photo {
+    width: 220px;
+    height: 320px;
+  }
+
+  .hero__circle--large {
+    width: 260px;
+    height: 260px;
+  }
+
+  .hero__name {
+    font-size: clamp(3rem, 14vw, 4rem);
+  }
 }
