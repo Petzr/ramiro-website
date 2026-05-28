@@ -8,7 +8,7 @@ const BIO_PARAGRAPH_ONE =
 
 const BIO_PARAGRAPH_TWO =
   'Hij maakt cabaret en jeugdtheater dat mensen raakt — en een beetje minder eenzaam laat voelen. ' +
-  'De Bangemannen speelt door heel Nederland en combineert theater met maatschappelijke thema's.';
+  "De Bangemannen speelt door heel Nederland en combineert theater met maatschappelijke thema's.";
 
 function About() {
   const section = (

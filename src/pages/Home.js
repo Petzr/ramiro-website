@@ -6,8 +6,8 @@ function Home() {
   return (
     <>
       <Hero />
-      <Gallery />
       <About />
+      <Gallery />
     </>
   );
 }
