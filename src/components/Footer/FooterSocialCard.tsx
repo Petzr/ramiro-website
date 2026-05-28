@@ -5,11 +5,11 @@ type FooterSocialCardProps = {
   subtitle?: string;
   handle: string;
   href: string;
-  icon: React.ReactNode;
+  icon: React.ComponentType;
   iconClassName: string;
 };
 
-function FooterSocialCard({ platform, subtitle, handle, href, icon, iconClassName }: FooterSocialCardProps) {
+function FooterSocialCard({ platform, subtitle, handle, href, icon: Icon, iconClassName }: FooterSocialCardProps) {
   const card = (
     <a className="footer__social-card" href={href} target="_blank" rel="noopener noreferrer">
       <div className="footer__card-info">
@@ -17,7 +17,7 @@ function FooterSocialCard({ platform, subtitle, handle, href, icon, iconClassNam
         {subtitle && <span className="footer__card-subtitle">{subtitle}</span>}
         <span className="footer__card-handle">{handle}</span>
       </div>
-      <span className={`footer__card-icon ${iconClassName}`}>{icon}</span>
+      <span className={`footer__card-icon ${iconClassName}`}><Icon /></span>
     </a>
   );
 
