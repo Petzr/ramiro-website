@@ -10,12 +10,6 @@ $footer-card-padding: 1.25rem 1.5rem;
 $footer-icon-size: 2rem;
 $footer-breakpoint-tablet: 900px;
 $footer-breakpoint-mobile: 600px;
-$color-instagram: #e1306c;
-$color-instagram-gradient-start: #f9ce34;
-$color-instagram-gradient-mid: #ee2a7b;
-$color-instagram-gradient-end: #6228d7;
-$color-linkedin: #0a66c2;
-$color-youtube: #ff0000;
 
 .footer {
   background-color: tokens.$color-dark;
@@ -89,30 +83,10 @@ $color-youtube: #ff0000;
 }
 
 .footer__card-icon {
-  font-size: $footer-icon-size;
-  display: flex;
-  align-items: center;
+  width: $footer-icon-size;
+  height: $footer-icon-size;
+  object-fit: contain;
   flex-shrink: 0;
-
-  &--instagram {
-    background: linear-gradient(
-      45deg,
-      $color-instagram-gradient-start,
-      $color-instagram-gradient-mid,
-      $color-instagram-gradient-end
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  &--linkedin {
-    color: $color-linkedin;
-  }
-
-  &--youtube {
-    color: $color-youtube;
-  }
 }
 
 .footer__contact {

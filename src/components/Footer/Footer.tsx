@@ -1,5 +1,4 @@
 import './Footer.scss';
-import { FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import FooterSocialCard from './FooterSocialCard';
 
 type SocialCard = {
@@ -7,8 +6,9 @@ type SocialCard = {
   subtitle?: string;
   handle: string;
   href: string;
-  icon: React.ComponentType;
-  iconClassName: string;
+  // TODO: vervang null door '/images/icons/<platform>.png' zodra je de afbeeldingen hebt toegevoegd
+  iconSrc: string | null;
+  iconAlt: string;
 };
 
 type ContactLink = {
@@ -22,30 +22,30 @@ const SOCIAL_CARDS: SocialCard[] = [
     subtitle: 'Persoonlijk',
     handle: '@ramirosfeestje',
     href: 'https://www.instagram.com/ramirosfeestje?igsh=cHpzaHJhYjkyZjR0&utm_source=qr',
-    icon: FaInstagram,
-    iconClassName: 'footer__card-icon--instagram',
+    iconSrc: null, // TODO: '/images/icons/instagram.png'
+    iconAlt: 'Instagram logo',
   },
   {
     platform: 'Instagram',
     subtitle: 'De Bangemannen',
     handle: '@bangemannen',
     href: 'https://www.instagram.com/bangemannen?igsh=MTJndHpqMjc4M3M0MQ%3D%3D&utm_source=qr',
-    icon: FaInstagram,
-    iconClassName: 'footer__card-icon--instagram',
+    iconSrc: null, // TODO: '/images/icons/instagram.png'
+    iconAlt: 'Instagram logo',
   },
   {
     platform: 'LinkedIn',
     handle: 'Ramiro Snackey',
     href: 'https://www.linkedin.com/in/ramiro-snackey-935439383?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
-    icon: FaLinkedin,
-    iconClassName: 'footer__card-icon--linkedin',
+    iconSrc: null, // TODO: '/images/icons/linkedin.png'
+    iconAlt: 'LinkedIn logo',
   },
   {
     platform: 'YouTube',
     handle: '@ramirosnackey1288',
     href: 'https://youtube.com/@ramirosnackey1288?si=2Kp7rWQL32MGHuG5',
-    icon: FaYoutube,
-    iconClassName: 'footer__card-icon--youtube',
+    iconSrc: null, // TODO: '/images/icons/youtube.png'
+    iconAlt: 'YouTube logo',
   },
 ];
 
@@ -64,8 +64,8 @@ function Footer() {
       subtitle={card.subtitle}
       handle={card.handle}
       href={card.href}
-      icon={card.icon}
-      iconClassName={card.iconClassName}
+      iconSrc={card.iconSrc}
+      iconAlt={card.iconAlt}
     />
   ));
 
