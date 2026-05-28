@@ -126,8 +126,8 @@ $breakpoint-mobile: 768px;
 .hero__photo {
   position: relative;
   z-index: 2;
-  width: 280px;
-  height: 420px;
+  width: 480px;
+  height: 520px;
   object-fit: cover;
   object-position: top center;
   border-radius: $photo-border-radius;
@@ -150,19 +150,19 @@ $breakpoint-mobile: 768px;
   &--small-top {
     width: 70px;
     height: 70px;
-    background-color: tokens.$color-rose;
+    background-color: rgba(212, 102, 122, 0.8);
     top: 4%;
     right: 0;
-    z-index: 3;
+    z-index: 1;
   }
 
   &--small-bottom {
     width: 60px;
     height: 60px;
-    background-color: tokens.$color-rose;
+    background-color: rgba(212, 102, 122, 0.8);
     bottom: 6%;
-    left: 48%;
-    z-index: 3;
+    left: 5%;
+    z-index: 1;
   }
 }
 
@@ -170,15 +170,17 @@ $breakpoint-mobile: 768px;
   position: absolute;
   width: 70px;
   height: 70px;
-  background-color: tokens.$color-lavender;
+  background-color: rgba(153, 136, 187, 0.5);
   bottom: 10%;
   right: 0;
-  z-index: 3;
+  z-index: 1;
 }
 
 // --- Mobile layout ---
 
 @media (max-width: $breakpoint-mobile) {
+
+  
   .hero {
     padding: 2.5rem 1.25rem;
   }
@@ -224,4 +226,23 @@ $breakpoint-mobile: 768px;
   .hero__name {
     font-size: clamp(3rem, 14vw, 4rem);
   }
+
+  
+.hero__circle {
+
+  &--small-top {
+    z-index: 1;
+  }
+
+  &--small-bottom {
+    bottom: 0%;
+    left: -2%;
+    z-index: 1;
+  }
+}
+
+.hero__square {
+  background-color: rgba(153, 136, 187, 0.5);
+  z-index: 1;
+}
 }
