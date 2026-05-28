@@ -1,16 +1,8 @@
 @use '../../index' as tokens;
 
-$about-max-width: 1200px;
-$about-photo-width: 280px;
-$about-photo-height: 400px;
-$about-photo-border-radius: 20px;
-$about-accent-circle-size: 80px;
-$about-accent-block-size: 50px;
-$about-breakpoint-mobile: 768px;
-
 .about {
   background-color: tokens.$color-cream;
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   overflow: hidden;
 }
 
@@ -19,7 +11,7 @@ $about-breakpoint-mobile: 768px;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 4rem;
-  max-width: $about-max-width;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -48,43 +40,43 @@ $about-breakpoint-mobile: 768px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: $about-photo-height + 80px;
+  height: 480px;
 }
 
 .about__photo {
   position: relative;
   z-index: 2;
-  width: $about-photo-width;
-  height: $about-photo-height;
+  width: 420px;
+  height: 470px;
   object-fit: cover;
-  object-position: top center;
-  border-radius: $about-photo-border-radius;
+  object-position: center;
+  border-radius: 20px;
 }
 
 .about__accent {
   position: absolute;
 
   &--circle {
-    width: $about-accent-circle-size;
-    height: $about-accent-circle-size;
+    width: 460px;
+    height: 460px;
     border-radius: 50%;
     background-color: rgba(153, 136, 187, 0.35);
-    top: 4%;
-    left: 6%;
+    top: -15%;
+    left: -10%;
     z-index: 1;
   }
 
   &--block {
-    width: $about-accent-block-size;
-    height: $about-accent-block-size;
-    background-color: tokens.$color-rose;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(212, 102, 122, 0.8);
     bottom: 8%;
-    right: 8%;
-    z-index: 3;
+    right: 0%;
+    z-index: 1;
   }
 }
 
-@media (max-width: $about-breakpoint-mobile) {
+@media (max-width: 768px) {
   .about {
     padding: 3rem 1.25rem;
   }
@@ -96,12 +88,23 @@ $about-breakpoint-mobile: 768px;
   }
 
   .about__photo-wrapper {
-    order: -1;
     height: 340px;
   }
 
   .about__photo {
-    width: 220px;
-    height: 320px;
+    width: 300px;
+    max-height: 320px;
+    object-position: center;
   }
+
+  .about__accent {
+
+
+    &--circle {
+      width: 160px;
+      height: 160px;
+      top: -5%;
+    }
+  }
+
 }
