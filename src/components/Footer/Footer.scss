@@ -1,49 +1,162 @@
 @use '../../index' as tokens;
 
-$footer-padding-vertical: 3rem;
+$footer-max-width: 1200px;
+$footer-padding-vertical: 4rem;
 $footer-padding-horizontal: 2rem;
-$footer-social-gap: 1rem;
-$footer-social-border-radius: 2rem;
-$footer-social-padding: 0.4rem 1rem;
-$footer-social-border: 1px solid rgba(tokens.$color-white, 0.35);
-$footer-copyright-font-size: 0.85rem;
-$footer-copyright-color: rgba(tokens.$color-white, 0.5);
-$footer-block-gap: 1.25rem;
+$footer-card-gap: 1rem;
+$footer-card-border-radius: 12px;
+$footer-card-border: 1px solid rgba(tokens.$color-white, 0.1);
+$footer-card-padding: 1.25rem 1.5rem;
+$footer-icon-size: 2rem;
+$footer-breakpoint-tablet: 900px;
+$footer-breakpoint-mobile: 600px;
+$color-instagram: #e1306c;
+$color-instagram-gradient-start: #f9ce34;
+$color-instagram-gradient-mid: #ee2a7b;
+$color-instagram-gradient-end: #6228d7;
+$color-linkedin: #0a66c2;
+$color-youtube: #ff0000;
 
 .footer {
+  background-color: tokens.$color-dark;
+  color: tokens.$color-white;
+  padding: $footer-padding-vertical $footer-padding-horizontal;
+}
+
+.footer__inner {
+  max-width: $footer-max-width;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $footer-block-gap;
-  padding: $footer-padding-vertical $footer-padding-horizontal;
-  background-color: tokens.$color-dark;
+  gap: 2.5rem;
+}
+
+.footer__eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: tokens.$color-rose;
+}
+
+.footer__social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $footer-card-gap;
+  width: 100%;
+}
+
+.footer__social-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $footer-card-padding;
+  border: $footer-card-border;
+  border-radius: $footer-card-border-radius;
+  background-color: rgba(tokens.$color-white, 0.04);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
   color: tokens.$color-white;
 
-  &__socials {
-    display: flex;
-    gap: $footer-social-gap;
+  &:hover {
+    background-color: rgba(tokens.$color-white, 0.08);
+    border-color: rgba(tokens.$color-white, 0.2);
+  }
+}
+
+.footer__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer__card-platform {
+  font-size: 1rem;
+  font-weight: 700;
+  color: tokens.$color-white;
+}
+
+.footer__card-subtitle {
+  font-size: 0.75rem;
+  color: rgba(tokens.$color-white, 0.45);
+}
+
+.footer__card-handle {
+  font-size: 0.85rem;
+  color: tokens.$color-lavender;
+}
+
+.footer__card-icon {
+  font-size: $footer-icon-size;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  &--instagram {
+    background: linear-gradient(
+      45deg,
+      $color-instagram-gradient-start,
+      $color-instagram-gradient-mid,
+      $color-instagram-gradient-end
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  &__social-link {
-    display: inline-block;
-    padding: $footer-social-padding;
-    border: $footer-social-border;
-    border-radius: $footer-social-border-radius;
+  &--linkedin {
+    color: $color-linkedin;
+  }
+
+  &--youtube {
+    color: $color-youtube;
+  }
+}
+
+.footer__contact {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__contact-link {
+  font-size: 0.9rem;
+  color: rgba(tokens.$color-white, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
     color: tokens.$color-white;
-    font-family: 'Work Sans', 'Segoe UI', 'Helvetica Neue', sans-serif;
-    text-decoration: none;
-    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+}
 
-    &:hover {
-      border-color: tokens.$color-lavender;
-      color: tokens.$color-lavender;
-    }
+.footer__legal {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(tokens.$color-white, 0.35);
+}
+
+@media (max-width: $footer-breakpoint-tablet) {
+  .footer__social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $footer-breakpoint-mobile) {
+  .footer {
+    padding: 3rem 1.25rem;
   }
 
-  &__copyright {
-    margin: 0;
-    font-size: $footer-copyright-font-size;
-    color: $footer-copyright-color;
-    font-family: 'Work Sans', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  .footer__social-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__contact {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
   }
 }
