@@ -1,12 +1,17 @@
 @use '../../index' as tokens;
 
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 2rem;
   background-color: tokens.$color-dark;
   color: tokens.$color-background;
+  padding: 1.25rem 2rem;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
   &__logo {
     font-size: 1.25rem;
