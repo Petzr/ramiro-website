@@ -4,9 +4,8 @@ import './Navbar.scss';
 function Navbar() {
 
   const navigationLinks: { label: string; href: string }[] = [
-    { label: 'Over mij', href: '#about' },
+    { label: 'Home', href: '/' },
     { label: "Meer foto's", href: '/gallery' },
-    { label: 'Contact', href: '#contact' },
   ];
 
   return (
