@@ -1,6 +1,6 @@
 import './Hero.scss';
 
-const HERO_IMAGE_PATH = '/images/hero-portrait.jpg';
+const HERO_IMAGE_PATH = '/images/ramiro-serious.jpg';
 
 function Hero() {
   return (

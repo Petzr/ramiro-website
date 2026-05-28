@@ -2,14 +2,14 @@ import './Gallery.scss';
 import GalleryItem, { GalleryPhoto } from './GalleryItem';
 
 const GALLERY_PHOTOS: GalleryPhoto[] = [
-  { id: 1, label: 'Foto 1', src: '/images/IMG_7710.JPG', alt: 'Ramiro op het podium' },
-  { id: 2, label: 'Foto 2', src: null, alt: 'Galerij foto 2' },
-  { id: 3, label: 'Foto 3', src: null, alt: 'Galerij foto 3' },
+  { label: 'black-pose', src: '/images/black-pose.jpg', alt: 'black-pose' },
+  { label: 'wij-zijn-bang-poster', src: '/images/wij-zijn-bang-poster.jpg', alt: 'wij-zijn-bang-poster' },
+  { label: 'mirror-picture', src: '/images/mirror-picture.jpg', alt: 'mirror-picture' },
 ];
 
 function Gallery() {
-  const items = GALLERY_PHOTOS.map((photo: GalleryPhoto) => (
-    <GalleryItem key={photo.id} photo={photo} />
+  const items = GALLERY_PHOTOS.map((photo: GalleryPhoto, index: number) => (
+    <GalleryItem key={index} photo={photo} />
   ));
 
   return (

@@ -1,7 +1,6 @@
 import './Gallery.scss';
 
 interface GalleryPhoto {
-  id: number;
   label: string;
   src: string | null;
   alt: string;

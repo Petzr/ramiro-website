@@ -1,6 +1,6 @@
 import './About.scss';
 
-const ABOUT_IMAGE_PATH = '/images/Ramiro 2.JPG';
+const ABOUT_IMAGE_PATH = '/images/nude-in-woods.jpg';
 
 const BIO_PARAGRAPH_ONE =
   'Ramiro is theatermaker, performer en een van de oprichters van theaterduo De Bangemannen. ' +
