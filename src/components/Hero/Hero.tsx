@@ -1,6 +1,6 @@
 import './Hero.scss';
 
-const HERO_IMAGE_PATH = '/images/ramiro-serious.jpg';
+const HERO_IMAGE_PATH = '/images/ramiro.jpeg';
 
 function Hero() {
   return (
@@ -12,8 +12,8 @@ function Hero() {
           <h1 className="hero__name">Ramiro</h1>
           <p className="hero__subtitle">De Bangemannen — Cabaret &amp; Theater</p>
           <p className="hero__bio">
-            Theatermaker, performer en oprichter van theaterduo De Bangemannen.
-            Ramiro maakt cabaret en jeugdtheater dat mensen raakt en minder eenzaam laat voelen.
+            Acteur, Theatermaker en oprichter van theaterduo De Bangemannen. Ramiro maakt Theater dat schuurt, 
+            ontroert en mensen iets minder eenzaam laat voelen.
           </p>
         </div>
 
